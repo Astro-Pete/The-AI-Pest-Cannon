@@ -1,6 +1,7 @@
 The AI Pest cannon
 
-1. Introduction & How It Works
+Introduction & How It Works
+
 The AI Pest Cannon is a real-time pest detection application for MacOS, Windows, Raspberry Pi, and Linux. It uses a YOLO (You Only Look Once) neural network to analyse a live camera feed and identify animals and pests as they appear. When a pest is confirmed, it triggers an MQTT message and/or GPIO relay to your smart home system — activating a water cannon, sprinkler, siren, or any connected device.
 The universal script ai_pest_cannon_universal_v1.py runs on all supported platforms from a single codebase.
 The application detects the host platform at startup and displays only the controls relevant to that platform.
