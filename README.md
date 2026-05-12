@@ -1,5 +1,24 @@
 The AI Pest cannon
 
+1. Introduction & How It Works
+The AI Pest Cannon is a real-time pest detection application for MacOS, Windows, Raspberry Pi, and Linux. It uses a YOLO (You Only Look Once) neural network to analyse a live camera feed and identify animals and pests as they appear. When a pest is confirmed, it triggers an MQTT message and/or GPIO relay to your smart home system — activating a water cannon, sprinkler, siren, or any connected device.
+The universal script ai_pest_cannon_universal_v1.py runs on all supported platforms from a single codebase.
+The application detects the host platform at startup and displays only the controls relevant to that platform.
+Key capabilities: Multi-class YOLO pest detection · Multiple ROI zones · Safe-class global suppression · MQTT / GPIO output · VLC or OpenCV RTSP backend · Hailo NPU on Raspberry Pi · Manual one-shot and timed cannon control · Settings persistence · Detection image saving · Custom alert sound
+
+Detection pipeline:
+
+• Capture — Frames are read from an RTSP network camera, USB webcam, or CSI camera.
+• Inference — Each frame (or every Nth frame if skip_frames is set) is passed through the YOLO model, returning
+bounding boxes, class labels, and confidence scores.
+• Safe-class check — If any safe-class object (e.g. person) appears anywhere in the frame, the cannon is
+suppressed — even if a pest is simultaneously in an ROI.
+• ROI filtering — Pest detections are matched against your configured ROI zones.
+• Confirmation — After confirm_frames consecutive confirmed frames the cannon fires.
+• Output — MQTT ON is published and/or a GPIO relay closes. After fire_time seconds MQTT OFF is sent
+automatically.
+• Holdoff — A cooldown period prevents the cannon re-firing immediately.
+
 Recommended Hardware:
 
 Raspberry Pi 5 with AI HAT+ 26 TOPS plus optional relay board connected to GPIO
