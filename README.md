@@ -64,7 +64,7 @@ system settings are saved in /home/pi/.config/ai_pest_cannon/settings.json (this
 
 Tips:
 
-Read the User Guide PDF file.
+Read the User Guide PDF file. (https://drive.google.com/file/d/1ckHpSCwEQqAl_zVuAT-dxXGfUbC_3At0/view?usp=share_link)
 
 Create your own custom sound file, just make sure the name is custom.wav 
 
