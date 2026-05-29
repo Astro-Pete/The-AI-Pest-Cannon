@@ -88,4 +88,13 @@ The manual Cannon fire button is linked to a timer. You set it for up to 60 minu
 
 Have Fun and happy Pest Hunting :) 
 
+UPDATES: 
+
+V5 adds inference optimisations for CPU and and adds a log note about imgsz being ignored for Hailo models as the imgsz is fixed at 640.
+
+V8 adds Inverted ROI option to ignore detections where the bounding box center is within the ROI region. This is good for ignoring false positives from features that trigger detections under changing lighting conditions or where a pest class is allowed to be within the full camera frame.
+
+To run the updates, simply edit the launcher file to call the new updated file.
+
+
 
