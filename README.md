@@ -9,7 +9,7 @@ Runs on **macOS** (Apple Silicon / Metal), **Windows** (NVIDIA CUDA or CPU), **L
 **Raspberry Pi 5** with the **Hailo AI HAT+** NPU.
 
 Current version: **V8**. See [CHANGELOG.md](CHANGELOG.md).
-User Guide (PDF): [download](https://drive.google.com/file/d/1ckHpSCwEQqAl_zVuAT-dxXGfUbC_3At0/view?usp=share_link)
+User Guide (PDF): [download](https://github.com/Astro-Pete/The-AI-Pest-Cannon/releases/download/v8/AI_Pest_Cannon_User_Guide.pdf)
 
 ## Features
 
@@ -100,7 +100,7 @@ once, then start the app with `./run_from_source.sh`.
 
 ## Tips
 
-- Read the User Guide PDF.
+- Read the [User Guide PDF](https://github.com/Astro-Pete/The-AI-Pest-Cannon/releases/download/v8/AI_Pest_Cannon_User_Guide.pdf).
 - Make your own alert sound: just name it `custom.wav` and put it beside `ai_pest_cannon.py`.
 - RTSP streams are convenient, but a USB or CSI camera gives the best inference speed and detection. Use the smaller models if needed (e.g. `yolov11n.hef`, or `yolo11n.pt` on CPU).
 - The app works with CPU fallback, but it's very slow. On a Pi, the AI HAT+ 26 TOPS (or the Raspberry Pi AI Camera with its built-in Hailo NPU) is far better.
