@@ -3,7 +3,7 @@ set -euo pipefail
 
 APP_DIR="${APP_DIR:-$HOME/ai-pest-cannon}"
 VENV_DIR="${VENV_DIR:-$APP_DIR/yolo-env}"
-APP_FILE="${APP_FILE:-ai_pest_cannon_universal_v1.py}"
+APP_FILE="${APP_FILE:-ai_pest_cannon.py}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 
 printf '\n=== AI Pest Cannon Raspberry Pi installer - Hailo fixed ===\n'

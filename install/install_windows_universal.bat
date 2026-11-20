@@ -5,7 +5,7 @@ echo AI Pest Cannon Universal - Windows installer
 
 set APP_DIR=%USERPROFILE%\ai-pest-cannon
 set VENV_DIR=%APP_DIR%\yolo-env
-set APP_FILE=ai_pest_cannon_universal_v1.py
+set APP_FILE=ai_pest_cannon.py
 set LAUNCHER=%APP_DIR%\launch_ai_pest_cannon_universal_windows.bat
 
 mkdir "%APP_DIR%" 2>nul
@@ -43,7 +43,7 @@ python -m pip install --force-reinstall numpy==1.26.4
   echo cd /d "%%USERPROFILE%%\ai-pest-cannon"
   echo call "%%USERPROFILE%%\ai-pest-cannon\yolo-env\Scripts\activate.bat"
   echo set PATH=C:\Program Files\VideoLAN\VLC;%%PATH%%
-  echo python ai_pest_cannon_universal_v1.py
+  echo python ai_pest_cannon.py
   echo pause
 ) > "%LAUNCHER%"
 
@@ -53,7 +53,7 @@ python -c "import torch, numpy; print('torch:', torch.__version__); print('torch
 
 echo.
 echo Install complete.
-echo Copy ai_pest_cannon_universal_v1.py into: %APP_DIR%
+echo Copy ai_pest_cannon.py into: %APP_DIR%
 echo Launch with: %LAUNCHER%
 echo.
 echo Make sure 64-bit VLC is installed. If VLC is not in C:\Program Files\VideoLAN\VLC, edit the launcher PATH line.

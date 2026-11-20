@@ -1,0 +1,22 @@
+# macOS / Python clutter
+.DS_Store
+__pycache__/
+*.pyc
+
+# Build output and build environments (packaging/AIPestCannon.spec IS kept: the build uses it)
+packaging/build/
+packaging/dist/
+packaging/.venv-*/
+.venv*/
+yolo-env/
+
+# Packaged apps are published as GitHub Release downloads, not stored in git
+releases/
+
+# YOLO .pt weights: Ultralytics downloads them automatically by name on first use,
+# and the larger ones exceed GitHub's 100 MB file limit. See models/README.md.
+models/*.pt
+
+# Runtime output
+detections/
+cannon-logs/

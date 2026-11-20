@@ -1,0 +1,14 @@
+# Build tools and runtime dependencies for the packaged AI Pest Cannon.
+# Pinned to the versions that run from source in ~/mac-yolo-env (2026-10-14 17:37 UTC).
+# On Windows, pip installs the CPU build of PyTorch. For an NVIDIA GPU, install the matching CUDA build of
+# torch and torchvision into the build environment first (see https://pytorch.org/get-started/locally/).
+PyInstaller==6.19.0
+PySide6==6.11.0
+ultralytics==8.4.41
+torch==2.11.0
+torchvision==0.26.0
+numpy==2.4.4
+opencv-python==4.13.0.92
+paho-mqtt==2.1.0
+python-vlc==3.0.21203
+lap==0.5.13

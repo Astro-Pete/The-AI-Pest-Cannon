@@ -1,0 +1,8 @@
+# Runtime dependencies of app/ai_pest_cannon.py (scripts/01_setup.sh installs these and more into ~/mac-yolo-env).
+PySide6
+ultralytics
+opencv-python
+numpy
+paho-mqtt
+torch
+python-vlc   # RTSP via libVLC; needs VLC installed (VLC.app on macOS, 64-bit VLC on Windows)

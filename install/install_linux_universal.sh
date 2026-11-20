@@ -3,25 +3,26 @@ set -euo pipefail
 
 APP_DIR="${APP_DIR:-$HOME/ai-pest-cannon}"
 VENV_DIR="$APP_DIR/yolo-env"
-APP_FILE="ai_pest_cannon_universal_v1.py"
-LAUNCHER="$APP_DIR/launch_ai_pest_cannon_universal_mac.sh"
+LAUNCHER="$APP_DIR/launch_ai_pest_cannon_universal_linux.sh"
 
-printf '\nAI Pest Cannon Universal - macOS installer\n'
+printf '\nAI Pest Cannon Universal - Linux installer\n'
 printf 'Working folder: %s\n\n' "$APP_DIR"
 
-if ! command -v brew >/dev/null 2>&1; then
-  echo "Homebrew is required. Install it first from https://brew.sh/"
-  exit 1
-fi
-
-brew install python@3.11 ffmpeg || true
-brew install --cask vlc || true
+sudo apt update
+sudo apt install -y \
+  python3-pip \
+  python3-venv \
+  ffmpeg \
+  alsa-utils \
+  vlc \
+  libvlc-dev \
+  libxcb-cursor0
 
 mkdir -p "$APP_DIR" "$HOME/detections" "$HOME/cannon-logs"
 cd "$APP_DIR"
 
 if [ ! -d "$VENV_DIR" ]; then
-  python3.11 -m venv "$VENV_DIR"
+  python3 -m venv "$VENV_DIR"
 fi
 
 source "$VENV_DIR/bin/activate"
@@ -37,11 +38,11 @@ set -e
 APP_DIR="${APP_DIR:-$HOME/ai-pest-cannon}"
 cd "$APP_DIR"
 source "$APP_DIR/yolo-env/bin/activate"
-python ai_pest_cannon_universal_v1.py
+python ai_pest_cannon.py
 LAUNCH
 chmod +x "$LAUNCHER"
 
 echo
 echo "Install complete."
-echo "Copy ai_pest_cannon_universal_v1.py into: $APP_DIR"
+echo "Copy ai_pest_cannon.py into: $APP_DIR"
 echo "Launch with: $LAUNCHER"
